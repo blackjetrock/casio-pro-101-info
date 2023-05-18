@@ -1,0 +1,52 @@
+Casio PRO-101 Internal Program Storage
+======================================
+
+
+From dumps of the RAM while storing a program, the tokens for keywords are:
+
+PR#n       8n
+
+*          28
+:          48
+ANS        49
+ENT        4A
+=          4F
+END        73
+
+K constants
+-----------
+
+0          10
+1          11
+2
+3
+4
+5
+6
+7
+8
+9
+
+ENT/ANS memories
+----------------
+
+1           31
+2           32
+
+
+Example Programs
+================
+
+PR#1:
+ent 1:
+2 = 1 * K 10:
+ANS 2:
+END
+
+(Order of bytes is not as expected)
+
+28 31 4F 32 48 31 4A 81 73
+48 32 49 48 10 11 46 00 00
+
+
+
