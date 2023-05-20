@@ -6,12 +6,28 @@ From dumps of the RAM while storing a program, the tokens for keywords are:
 
 PR#n       8n
 
+SQRT       21
++/-        22
+/          27
 *          28
+a^n        29
+-          2A
++          2B
+(=)        40
+MAC        41
+IM         44
+I          45
 :          48
 ANS        49
 ENT        4A
-=          4F
+CALL-21    4B
+GOTO-09    4C
+IF-15      4E
+=          4F      01
+ST#-7      5D
+IJ         67
 END        73
+.          1F
 
 K constants
 -----------
