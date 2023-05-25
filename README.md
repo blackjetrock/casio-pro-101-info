@@ -29,11 +29,11 @@ This device appears to be a 1024 bit RAM chip. It seems to be a device where som
   4   nc
   5   CLKA    (VB levels)
   6   CLKB    (VB levels)
-  7   A9      (VA levels)
+  7   A3      (VA levels)
   8   0V
-  9   A8
-  10  A7
-  11  A6
+  9   A2
+  10  A1
+  11  A0
   12  CE      (VA levels)
   13  RW      (VA levels)
   14  DOUT    (VA levels)
