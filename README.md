@@ -50,7 +50,7 @@ This device appears to be a 1024 bit RAM chip. It seems to be a device where som
   
   Addr:D DAT:05000000070000043007001234567890 RW:FFFFFFFFFFFFFFFF0000000000000000
   
-  The first bit to be clocked out is at the right hand end of the data as shown here. That puts the digits in the corret order. The RW signal is low for the 64 bits of data if that data is to be written. The HD36106 has a data in pin and a data out pin, the data shown her eis the data in pin data.
+  The first bit to be clocked out is at the right hand end of the data as shown here. That puts the digits in the correct order. The RW signal is low for the 64 bits of data if that data is to be written. The HD36106 has a data in pin and a data out pin, the data shown her eis the data in pin data.
   The address is the address of the 'program memory' of the PRO-101, it has 15 of these, so addresses 1 to 15 inclusive (1-F in hex) are valid. 
   
   The data:
@@ -59,13 +59,14 @@ This device appears to be a 1024 bit RAM chip. It seems to be a device where som
   
   can be broken up as:
   
-  DAT:050000000700000 4300 7 00 1234567890
+  DAT:0500000007000004 300 7 00 1234567890
   
-  1234567890   is the data that is being written. This is the 10 digit BCD that the PRO-101 supports.
+  1234567890    is the register value that is being written. This is the 10 digit BCD that 
+                the PRO-101 supports. Exponents aren't supported on the PRO-101.
   00            unknown
   7             Position of decimal point
-  4300          unknown
+  300           unknown
   
-  050000000700000  Fixed unknown data
+  0500000007000004  Fixed unknown data
   
   
