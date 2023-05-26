@@ -61,6 +61,13 @@ This device appears to be a 1024 bit RAM chip. It seems to be a device where som
   
   DAT:0500000007000004 300 7 00 1234567890
   
+  
+  Indiret Register I
+  ==================
+  
+  The indirect register (I) is not stored in the HD36106. This means that some storage must be in the processor IC.
+  
+  
   1234567890    is the register value that is being written. This is the 10 digit BCD that 
                 the PRO-101 supports. Exponents aren't supported on the PRO-101.
   00            unknown
