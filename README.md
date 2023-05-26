@@ -43,4 +43,29 @@ This device appears to be a 1024 bit RAM chip. It seems to be a device where som
   VA is -6.6V in the PRO-101
   VB is -14.4V in the PRO-101
   
+  HD36106 Data format
+  ===================
+  
+  Data is a 128bit sequence. CE is low for 128 CLKs but data is only in the lower 64 bits. These are clocked out first. For example:
+  
+  Addr:D DAT:05000000070000043007001234567890 RW:FFFFFFFFFFFFFFFF0000000000000000
+  
+  The first bit to be clocked out is at the right hand end of the data as shown here. That puts the digits in the corret order. The RW signal is low for the 64 bits of data if that data is to be written. The HD36106 has a data in pin and a data out pin, the data shown her eis the data in pin data.
+  The address is the address of the 'program memory' of the PRO-101, it has 15 of these, so addresses 1 to 15 inclusive (1-F in hex) are valid. 
+  
+  The data:
+  
+  DAT:05000000070000043007001234567890
+  
+  can be broken up as:
+  
+  DAT:050000000700000 4300 7 00 1234567890
+  
+  1234567890   is the data that is being written. This is the 10 digit BCD that the PRO-101 supports.
+  00            unknown
+  7             Position of decimal point
+  4300          unknown
+  
+  050000000700000  Fixed unknown data
+  
   
