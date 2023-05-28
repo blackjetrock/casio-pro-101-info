@@ -25,9 +25,11 @@ GOTO-09    4C
 IF-15      4E
 =          4F      01
 ST#-7      5D
-IJ         67
+MJ         67
 END        73
 .          1F
+K          46
+
 
 K constants
 -----------
