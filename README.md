@@ -64,8 +64,8 @@ This device appears to be a 1024 bit RAM chip. It seems to be a device where som
   1234567890    is the register value that is being written. This is the 10 digit BCD that 
                 the PRO-101 supports. Exponents aren't supported on the PRO-101.
   00            unknown
-  7             Position of decimal point
-  300           unknown
+  07            Position of decimal point
+  3             unknown
   
   0500000007000004  Fixed unknown data
   
