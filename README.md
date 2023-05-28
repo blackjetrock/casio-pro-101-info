@@ -65,6 +65,7 @@ This device appears to be a 1024 bit RAM chip. It seems to be a device where som
                 the PRO-101 supports. Exponents aren't supported on the PRO-101.
   00            unknown
   07            Position of decimal point
+  0             Sign (0:+ve, 4:-ve)
   3             unknown
   
   0500000007000004  Fixed unknown data
