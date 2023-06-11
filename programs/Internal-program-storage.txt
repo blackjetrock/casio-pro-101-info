@@ -67,4 +67,87 @@ END
 48 32 49 48 10 11 46 00 00
 
 
+--------------------------------------------------------------------------------
+
+In these data dumps I have reversed the 8 byte 'reversed form' to make the
+program easier to view when in hex form.
+
+If you enter programs such as these:
+
+PR#1 ENT 1 : 2 : 3 = 1 * 2 : ANS 3 : END 
+PR#2 ENT 4 : 5 : 6 = 4 * 5 : ANS 6 : END 
+
+The internal data storage is like this:
+000: 81 4A 31 48 32 48 33 4F 
+008: 31 28 32 48 49 33 48 73 
+010: 82 4A 34 48 35 48 36 4F 
+018: 34 28 35 48 49 36 48 73 
+020: 00 00 00 00 00 00 00 00 
+
+If you then press
+
+PR#n :
+
+after entering the programs then the calulator rewrites the program memory to be like this:
+000: 82 4A 34 48 35 48 36 4F 
+008: 34 28 35 48 49 36 48 73 
+010: 81 4A 31 48 32 48 33 4F 
+018: 31 28 32 48 49 33 48 73 
+020: 00 00 00 00 00 00 00 00 
+
+
+which in keystroke form looks like this:
+PR#2 ENT 4 : 5 : 6 = 4 * 5 : ANS 6 : END 
+PR#1 ENT 1 : 2 : 3 = 1 * 2 : ANS 3 : END 
+
+
+If you enter another program then it look like this after entry:
+
+000: 82 4A 34 48 35 48 36 4F 
+008: 34 28 35 48 49 36 48 73 
+010: 81 4A 31 48 32 48 33 4F 
+018: 31 28 32 48 49 33 48 73 
+020: 83 4A 37 48 38 48 39 4F 
+028: 37 28 38 48 49 39 48 73 
+030: 00 00 00 00 00 00 00 00 
+
+PR#2 ENT 4 : 5 : 6 = 4 * 5 : ANS 6 : END 
+PR#1 ENT 1 : 2 : 3 = 1 * 2 : ANS 3 : END 
+PR#3 ENT 7 : 8 : 9 = 7 * 8 : ANS 9 : END 
+
+After a PR#n it is re-arranged:
+
+000: 82 4A 34 48 35 48 36 4F 
+008: 34 28 35 48 49 36 48 73 
+010: 83 4A 37 48 38 48 39 4F 
+018: 37 28 38 48 49 39 48 73 
+020: 81 4A 31 48 32 48 33 4F 
+028: 31 28 32 48 49 33 48 73 
+030: 00 00 00 00 00 00 00 00 
+
+
+PR#2 ENT 4 : 5 : 6 = 4 * 5 : ANS 6 : END 
+PR#3 ENT 7 : 8 : 9 = 7 * 8 : ANS 9 : END 
+PR#1 ENT 1 : 2 : 3 = 1 * 2 : ANS 3 : END 
+
+The order stays like this even after more PR#n keypresses. Looking at the number of
+writes to RAM, though, it looks like all of program memory is written after every
+PR#n press.
+
+
+Some PR#n keypresses and statistics:
+
+Number of reads  :31097
+Number of writes :5768
+Write protect    :Off
+
+Number of reads  :32761
+Number of writes :6024
+Write protect    :Off
+
+Number of reads  :34425
+Number of writes :6280
+Write protect    :Off
+
+There's 256 writes after every press, even if the programs haven't been altered.
 
