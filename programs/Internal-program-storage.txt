@@ -43,7 +43,12 @@ K constants
 6
 7
 8
-9
+9          19
+
+** unusable from keyboard **
+
+.          1F
+P          1E
 
 ENT/ANS memories
 ----------------
