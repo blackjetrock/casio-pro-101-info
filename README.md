@@ -19,10 +19,11 @@ HD36106
 
 This device appears to be a 1024 bit RAM chip. It seems to be a device where some address lines are set up and then the data is clocked out by a clock (two phase) in a multi-bit sequence. The pinout below appears to be correct, but in three different uses in calculators I have seen three different data formats and three different types of CE.
 
+<code>
 PRO-101    Active low CE 128 bit serial data
 FX-201P    A:Active high CE, 256 bit serial data
 FX201P:    B:CE pulsed low for each data access, maybe 64 bit serial data
-
+</code>
 
 <code>
 
