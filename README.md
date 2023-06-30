@@ -17,12 +17,15 @@ made a bit later than the TC5006P.
 HD36106
 -------
 
-This device appears to be a 1024 bit RAM chip. It seems to be a device where some address lines are set up and then the data is clocked out by a clock (two phase) in a multi-bit sequence. The pinout below appears to be correct, but in three different uses in calculators I have seen three different data formats and three different types of CE.
+This device is a 1024 bit RAM chip. It is organised as 16 64 bit serial registers. The addres slines select which of the 16 registers are selected.
+Data is clocked out of the DOUT line when CE is low, and clocked in to the DIN line when CE is low and RW is low.
 
+The pinout is below.
+
+The two phase clock is at a different voltage to the other signals.
 <code>
-PRO-101    Active low CE 128 bit serial data
-FX-201P    A:Active high CE, 256 bit serial data
-FX201P:    B:CE pulsed low for each data access, maybe 64 bit serial data
+CE is active low. CE is only valid on the appropriate clock edge. I have observed small high going pulses during a low CE that aren't valid.
+  
 </code>
 
 <code>
