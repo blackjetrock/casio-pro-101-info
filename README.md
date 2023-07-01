@@ -32,8 +32,8 @@ CE is active low. CE is only valid on the appropriate clock edge. I have observe
 
   Pinout
   
-  1   VA
-  2   VB  
+  1   VA  (-6V4)
+  2   VB  (-14V)
   3   nc
   4   nc
   5   CLKA    (VB levels)
